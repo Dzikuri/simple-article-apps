@@ -7,10 +7,10 @@
 
 ## Access CMS
 
-URL: localhost:8001/cms
-Credentials for admin:
-email: super-admin@article-apps.com
-password: demopassword
+- URL: localhost:8001/cms
+- Credentials for admin:
+- email: super-admin@article-apps.com
+- password: demopassword
 
 ## Installation
 
