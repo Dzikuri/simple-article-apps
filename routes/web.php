@@ -24,9 +24,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get("/admin",[LoginController::class, 'showLoginForm'])->name('login');
+Route::get("/cms",[LoginController::class, 'showLoginForm'])->name('login');
 Route::post("/login",[LoginController::class,'login']);
-Route::post("/logout",[LoginController::class,'logout'])->name('logout');
 Route::get("/blog/post/{id}",[ArticleController::class, 'show'])->name('post');
 Route::post("/blog/post/{id}/save-comment",[ArticleCommentController::class, 'store']);
 Route::get("/blog/category/{id}",[ArticleCategoryController::class,'show'])->name('post_category');
@@ -40,6 +39,7 @@ Route::group([
     'prefix' => 'cms',
     'middleware' => []
 ], function () {
+    Route::get("/logout",[LoginController::class,'logout'])->name('logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::post('article/category/create', [Article::class, 'create']);
     Route::get('article', [ArticleController::class, 'index'])->name('posts.index');

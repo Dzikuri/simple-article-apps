@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'name' => 'Super Admin',
             'email' => 'super-admin@article-apps.com',
-            'password' => '$2y$10$ZK/ZyrV/O98wrjkZh2yCxOnaUYAZJ4nUJJYAo6SJ10LjcJ7vDdKRi',
+            'password' => '$2y$10$ZK/ZyrV/O98wrjkZh2yCxOnaUYAZJ4nUJJYAo6SJ10LjcJ7vDdKRi', // demopassword
             'is_admin' => true,
         ]);
     }

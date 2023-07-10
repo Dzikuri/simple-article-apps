@@ -20,15 +20,15 @@ class ArticleCommentController extends Controller
         {
             $model = ArticleComment::query();
             return DataTables::of($model)
-                ->addColumn('actions', function ($model) use ($request) {
-                    $id = $model->id;
-                    $link = $request->url();
-                    //Edit Button
-                    $actionHtml = '<a href="'.$link.'/edit/'.$id.' " class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit"></span></a>';
-                    //Delete Button
-                    $actionHtml .='<a href="'.$link.'/delete/'.$id.'" data-delete-url="'.$link.'/delete/'.$id.'" class="btn btn-danger btn-sm delete-data" data-toggle="modal" data-target="#deleteModal"><span class="glyphicon glyphicon-trash"></span></a>';
-                    return $actionHtml;
-                })
+                // ->addColumn('actions', function ($model) use ($request) {
+                //     $id = $model->id;
+                //     $link = $request->url();
+                //     //Edit Button
+                //     $actionHtml = '<a href="'.$link.'/edit/'.$id.' " class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit"></span></a>';
+                //     //Delete Button
+                //     $actionHtml .='<a href="'.$link.'/delete/'.$id.'" data-delete-url="'.$link.'/delete/'.$id.'" class="btn btn-danger btn-sm delete-data" data-toggle="modal" data-target="#deleteModal"><span class="glyphicon glyphicon-trash"></span></a>';
+                //     return $actionHtml;
+                // })
                 ->addColumn('article',function ($model) use ($request){
                     //Show Post title on which user has Commented
                     $actionHtml = $model->article->title;

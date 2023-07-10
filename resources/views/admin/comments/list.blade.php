@@ -19,7 +19,7 @@
                 <th>user email</th>
                 <th>Post</th>
 
-                <th>Actions</th>
+                {{-- <th>Actions</th> --}}
             </tr>
             </thead>
             <tbody>
@@ -64,7 +64,7 @@
                     {data: 'article', name: 'article', orderable: false, searchable: false},
 
 
-                    {data: 'actions', name: 'actions', orderable: false, searchable: false}
+                    // {data: 'actions', name: 'actions', orderable: false, searchable: false}
                 ]
             });
         });
