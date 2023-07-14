@@ -35,7 +35,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-phone fa-5x"></i>
+                            <i class="fa fa-pencil fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">{{$number_article}}</div>

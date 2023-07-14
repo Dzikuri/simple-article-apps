@@ -22,11 +22,11 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    {{--<li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
-                        <li class="divider"></li>
+                        <li class="divider"></li> --}}
                         <li>
                             <a href="{{route('home')}}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -47,7 +47,7 @@
                         <li>
                             <a href="{{url('cms/dashboard')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
-                        <li>
+                       {{-- <li>
                             <a href="#"><i class="fa fa-pencil fa-fw"></i> Posts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -56,11 +56,14 @@
                                 <li>
                                     <a href="{{route('posts.create')}}"><i class="fa fa-plus fa-fw"></i>Add New</a>
                                 </li>
-                                {{-- <li>
+                                <li>
                                     <a href="{{route('posts-categories.index')}}"><i class="fa fa-circle-o fa-fw""></i>Categories</a>
-                                </li> --}}
+                                </li> 
                             </ul>
                             <!-- /.nav-second-level -->
+                        </li> --}}
+                        <li>
+                            <a href="{{route('posts.index')}}"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Posts</a>
                         </li>
                         <li>
                             <a href="{{url('cms/comments')}}"><i class="fa fa-comments" aria-hidden="true"></i> Comments</a>
