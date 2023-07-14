@@ -18,7 +18,7 @@ class ArticleCommentController extends Controller
     {
         if($request->ajax())
         {
-            $model = ArticleComment::query();
+            $model = ArticleComment::orderBy("created_at", "desc");
             return DataTables::of($model)
                 // ->addColumn('actions', function ($model) use ($request) {
                 //     $id = $model->id;
@@ -56,6 +56,13 @@ class ArticleCommentController extends Controller
     public function store(StoreArticleCommentRequest $request,$id)
     {
         $inputs = $request->all();
+
+        $validate = $request->validate([
+            'user_name' => 'required',
+            'email' => 'required|email',
+            'comment' => 'required',
+        ]);
+
         $post = Article::findOrFail($id);
 
         $comment  = new ArticleComment();

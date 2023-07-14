@@ -5,12 +5,12 @@
         <div class="container">
             <div class="single-top">
                 <a href="#"><img class="img-responsive" src="{{ asset($post->featured_image) }}" alt=" "></a>
-                <div class=" single-grid">
+                <div class=" single-grid" style="margin-bottom: 70px">
                     <h4>{{$post->title}}</h4>
                     <ul class="blog-ic">
                         <li><a href="#"><span> <i class="glyphicon glyphicon-user"> </i>{{$post->user->name}}</span>
                             </a></li>
-                        <li><span><i class="glyphicon glyphicon-time"> </i>{{$post->created_at->diffForHumans()}}</span>
+                        <li><span><i class="glyphicon glyphicon-tag"> </i>{{$post->category->title}}</span>
                         </li>
                         {{--  <li><span><i class="glyphicon glyphicon-eye-open"> </i>Hits:145</span></li> --}}
                     </ul>

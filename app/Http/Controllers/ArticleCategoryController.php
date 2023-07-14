@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreArticleCategoryRequest;
 use App\Http\Requests\UpdateArticleCategoryRequest;
+use App\Models\Article;
 use App\Models\ArticleCategory;
 
 class ArticleCategoryController extends Controller
@@ -45,9 +46,14 @@ class ArticleCategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ArticleCategory $articleCategory)
+    public function show($id)
     {
-        //
+        $category  = ArticleCategory::findOrFail($id);
+    	$posts = Article::where('category_id',$id)->where('is_draft', false)->paginate(10);
+    	$data['category'] = $category;
+    	$data['posts'] = $posts;
+        // dd($data);
+    	return view('blog.category',$data);
     }
 
     /**

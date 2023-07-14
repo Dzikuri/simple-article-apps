@@ -6,6 +6,7 @@ use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
 use App\Models\Article;
 use App\Models\ArticleCategory;
+use App\Models\ArticleComment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
@@ -20,7 +21,7 @@ class ArticleController extends Controller
     {
         if($request->ajax())
         {
-            $model = Article::query();
+            $model = Article::orderBy('created_at', 'desc');
             return DataTables::of($model)
                 ->addColumn('status',function ($model) use ($request){
                     $statusHtml = ($model->active) ? '<span class="label label-success">Active</span>' :'<span class="label label-danger">Deactivated</span>';
@@ -129,7 +130,7 @@ class ArticleController extends Controller
         $inputs['title'] = Str::slug($inputs['title'], '-');
         if($request->hasFile('featured_image'))
         {
-            $image_path = uploadWithThumb($inputs['featured_image'],'images/blog');
+            $image_path = uploadWithThumb($request->featured_image,'images/blog');
             $inputs['featured_image'] = $image_path;
         }
         Article::where('id', $id)->update($inputs);
@@ -143,6 +144,7 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         Article::where("id",$id)->delete();
+        ArticleComment::where('article_id',$id)->delete();
         \Session::flash('info','Post deleted Successfully');
         return redirect(url('cms/article'));
     }

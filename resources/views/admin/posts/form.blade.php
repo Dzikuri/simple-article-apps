@@ -45,7 +45,7 @@
 
 
 <div class="form-group{{ $errors->has('active') ? ' has-error' : '' }}">
-    <label>Active : </label>
+    <label>Publish : </label>
     <label class="radio-inline">
         {{Form::radio('is_draft','0',null,['id'=>'yes'])}} Yes
     </label>
