@@ -59,7 +59,7 @@ class ArticleCommentController extends Controller
 
         $validate = $request->validate([
             'user_name' => 'required',
-            'email' => 'required|email',
+            'user_email' => 'required|email',
             'comment' => 'required',
         ]);
 
