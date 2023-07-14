@@ -47,7 +47,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-6. Run the migratio
+6. Run the migration
 
 ```bash
 php artisan migrate
