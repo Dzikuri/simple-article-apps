@@ -53,12 +53,17 @@
   <script type="text/javascript">
 
       $(function () {
+          
           var table = $('#list-table').DataTable({
               processing: true,
               serverSide: true,
               ajax: '{!! route('posts.index') !!}',
               columns: [
-                  {data: 'id', name: 'id'},
+                  {data: 'id', name: 'id', 
+                    render: function (data, type, row, meta) {
+                      return meta.row + meta.settings._iDisplayStart + 1
+                    }
+                  },
                   {data: 'title', name: 'title'},
                   {data: 'is_draft', name: 'is_draft'},
                   {data: 'actions', name: 'actions', orderable: false, searchable: false}
