@@ -19,6 +19,7 @@
                         {{-- <li><a href="{{url('/gallery')}}" @if(Request::segment('1') == 'gallery') class="active" @endif>Gallery</a></li> --}}
                         <li><a href="{{url('/about?id=1')}}" @if(Request::segment('1') == 'about') class="active" @endif>About</a></li>
                         <li><a href="{{url('/contact?id=2')}}" @if(Request::segment('1') == 'contact') class="active" @endif>Contact</a></li>
+                        <li><a href="{{url('/profile?id=3')}}" @if(Request::segment('1') == 'contact') class="active" @endif>Profile</a></li>
                     </ul>
                 </div>
                 {{-- <div class="header-right">

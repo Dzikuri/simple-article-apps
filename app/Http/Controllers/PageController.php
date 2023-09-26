@@ -9,6 +9,7 @@ class PageController extends Controller
 {
     public function about(Request $request)
     {
+
         $pages = Page::where("id", $request->id)->first();
         // $data['page'] = $pages;
 		return view("page.about", $pages);
@@ -20,6 +21,14 @@ class PageController extends Controller
         $pages = Page::where("id", $request->id)->first();
         // $data['page'] = $pages;
 		return view("page.contact", $pages);
+        
+    }
+
+    public function profile(Request $request)
+    {
+        $pages = Page::where("id", $request->id)->first();
+        // $data['page'] = $pages;
+		return view("page.profile", $pages);
         
     }
 }
