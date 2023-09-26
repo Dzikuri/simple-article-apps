@@ -59,9 +59,9 @@
                 ajax: '{!! route('admin.comments') !!}',
                 columns: [
                     {data: 'id', name: 'id', 
-                    render: function (data, type, row, meta) {
-                      return meta.row + meta.settings._iDisplayStart + 1
-                    }
+                        render: function (data, type, row, meta) {
+                        return meta.row + meta.settings._iDisplayStart + 1
+                        }
                     },
                     {data: 'user_name', name: 'user_name'},
                     {data: 'user_email', name: 'user_email'},

@@ -17,7 +17,7 @@
       <tr>
         <th>#</th>
         <th>Post Title</th>
-        <th>Draft</th>
+        <th>Publish</th>
         <th>Actions</th>
       </tr>
     </thead>

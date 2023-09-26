@@ -6,6 +6,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\cms\auth\LoginController;
 use App\Http\Controllers\cms\DashboardController;
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\PageController;
 use App\Models\Article;
 use App\Models\ArticleCategory;
 use App\Models\ArticleComment;
@@ -24,6 +25,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get("/about",[PageController::class, 'about'])->name('about');
+Route::get("/contact",[PageController::class, 'contact'])->name('contact');
 Route::get("/cms",[LoginController::class, 'showLoginForm'])->name('login');
 Route::post("/login",[LoginController::class,'login']);
 Route::get("/blog/post/{id}",[ArticleController::class, 'show'])->name('post');
@@ -53,3 +56,5 @@ Route::group([
     Route::patch('/comments/{id}',[ArticleCommentController::class,"update"])->name('admin.comments.update');
     Route::delete('/comments/{id}',[ArticleCommentController::class,"destroy"])->name('admin.comments.delete');
 });
+
+
